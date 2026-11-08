@@ -53,8 +53,10 @@ final class DeviceLensUITests: XCTestCase {
             format: "label IN %@", ["保存到“文件”", "存储到“文件”", "Save to Files"]
         )).firstMatch
         XCTAssertTrue(saveToFiles.waitForExistence(timeout: 10))
-        let filename = app.otherElements["LP.CaptionBar.TopCaption"].firstMatch
-        XCTAssertTrue(filename.label.hasPrefix("DeviceLens-"))
+        let filename = app.descendants(matching: .any).matching(NSPredicate(
+            format: "label BEGINSWITH %@", "DeviceLens-"
+        )).firstMatch
+        XCTAssertTrue(filename.waitForExistence(timeout: 5))
         attachScreenshot(app, name: "采集报告分享面板")
         XCTAssertFalse(app.alerts["无法导出报告"].exists)
     }
