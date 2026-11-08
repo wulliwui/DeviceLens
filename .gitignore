@@ -1,0 +1,14 @@
+.DS_Store
+DerivedData/
+build/
+xcuserdata/
+*.xcuserstate
+*.xcresult
+*.ipa
+*.app/
+*.mobileprovision
+*.p12
+*.pem
+Artifacts/
+Exports/
+DeviceLens-*.html
