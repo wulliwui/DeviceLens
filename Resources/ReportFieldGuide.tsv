@@ -1,0 +1,175 @@
+device.model	UIKit 返回的设备类别，例如 iPhone。
+device.localized_model	UIKit 返回的本地化设备类别。
+device.name	iOS 提供的设备名称，受系统权限影响时可能是通用名称。
+device.os	UIKit 返回的操作系统名称。
+device.os_version	UIKit 返回的操作系统版本字符串。
+device.idfv	iOS 为同一开发商的 App 分配的标识符，作用域由 iOS 决定。
+screen.points	屏幕逻辑宽高，单位为点。
+screen.pixels	原生屏幕宽高，单位为像素。
+screen.scale	逻辑点与渲染像素之间的倍率。
+screen.native_scale	逻辑点与原生屏幕像素之间的倍率。
+screen.brightness	当前亮度，显示为取整的百分比。
+screen.capture	屏幕是否处于持续录制或镜像状态。
+power.level	剩余电量百分比。系统返回负值时显示不可用。
+power.state	充电状态。读取时临时开启电池监视。
+power.low_power	系统低电量模式是否开启。
+system.machine	硬件机型标识。模拟器优先使用模拟机型环境变量，真机使用 hw.machine。
+system.hw_model	sysctl 的 hw.model，表示硬件平台标识。
+system.os_build	sysctl 的 kern.osversion，表示系统构建号。
+system.kernel	uname 返回的内核版本字符串。
+system.boot_time	内核 KERN_BOOTTIME 给出的系统启动时刻，格式为 ISO 8601。
+system.cpu_count	系统报告的逻辑处理器数量。
+system.cpu_active	当前活跃的逻辑处理器数量。
+system.cpu_arch	当前 App 二进制的编译目标架构。
+system.ram	物理内存总量，单位为字节。
+system.storage_total	App 主目录所在文件系统的总容量，单位为字节。
+system.storage_free	App 主目录所在文件系统的可用容量，单位为字节。
+system.locale	当前区域设置的完整标识，可能包含语言和地区。
+system.region	当前区域设置的地区代码。
+system.languages	按用户偏好顺序排列的语言标识，用逗号连接。
+system.timezone	当前时区标识符，例如 Asia/Shanghai。
+system.gmt_offset	当前时区相对 UTC 的分钟偏移，包含当前夏令时影响。
+app.bundle	当前 App 的 Bundle ID。
+app.version	Info.plist 中面向用户的版本号。
+app.build	Info.plist 中标识本次构建的版本号。
+app.process	当前运行进程的名称。
+app.pid	当前进程的整数 ID，每次运行可能变化。
+app.att	iOS 的广告跟踪授权状态。
+app.idfa	广告标识符。已有系统跟踪授权时读取，过滤全零值。
+network.interfaces	活动 IPv4 和 IPv6 接口，含接口名、地址及可读的掩码。
+network.tunnel	从可见接口筛出的隧道接口，可作为 VPN 线索。
+network.proxy_mode	CFNetwork 返回的已启用代理类型。
+network.proxy_address	已启用的 HTTP、HTTPS 或 SOCKS 代理的主机和可读端口。
+network.proxy_pac	系统配置的代理自动配置脚本 URL。
+network.carrier	旧 CoreTelephony 接口返回的运营商名称，过滤空值和系统占位。
+network.carrier_codes	运营商的移动国家码和移动网络码，过滤空值和 65535。
+network.radio	当前订阅对应的蜂窝无线接入制式标识。
+network.status	NWPathMonitor 报告当前网络路径是否可用、不可用或需要建立连接。
+network.transport	当前网络路径使用的接口类型，如 Wi-Fi 或蜂窝。
+network.dns	当前路径是否支持 DNS。DNS 服务器地址见同盾字段 37。
+network.metered	系统报告路径是否为高成本网络，以及是否受低数据模式限制。
+sensor.accelerometer	加速度计是否可用。
+sensor.gyro	陀螺仪是否可用。
+sensor.magnetometer	磁力计是否可用。
+sensor.device_motion	Core Motion 的融合运动数据能力是否可用。
+location.authorization	Core Location 授权枚举的原始整数。系统定位服务开启时将 bit 4 置位。
+location.accuracy_authorization	Core Location 授权精度，分为完整精度和降低精度。
+location.coordinate	有效定位点的纬度和经度，单位为十进制度。
+location.altitude	系统定位提供的海拔高度，单位为米。需要有效的垂直精度。
+location.horizontal_accuracy	系统给出的水平定位精度，单位为米。
+location.vertical_accuracy	系统给出的垂直定位精度，单位为米。负值表示无效。
+location.timestamp	系统为该定位点记录的时刻，格式为 ISO 8601。
+location.simulated	系统标记该位置是否由软件模拟。系统未给出来源时显示不可用。
+location.accessory	系统标记该位置是否来自外部配件。系统未给出来源时显示不可用。
+omitted.public_ip	公网出口地址通常由网络对端观测，本项未采集。
+omitted.cell_tower	连接的蜂窝基站标识，本项未采集。
+omitted.hardware_ids	IMEI、IMSI、设备序列号和手机硬件 MAC，本项未采集。
+omitted.app_inventory	其他应用或系统账户清单，本项未采集。
+omitted.behavior	触摸轨迹及传感器原始时间序列，本项未采集。
+omitted.vendor_state	厂商 SDK 的私有标识、历史状态和服务端配置，本项未采集。
+turing.1001	IDFA；只有跟踪读取条件满足才取值
+turing.1002	IDFV，过滤空值或占位
+turing.1003	系统启动时的 Unix 时间戳，单位为秒，包含微秒部分。读取失败时写 0。
+turing.1004	采集时的 Unix 时间戳（秒，浮点）
+turing.1005	Documents 所在文件系统的可用容量，单位为字节。缺值时写 0。
+turing.1006	Documents 所在文件系统的总容量，单位为字节。缺值时写 0。
+turing.1007	host_statistics(HOST_VM_INFO) 的 free、active、inactive、wire 四项页数合计乘页大小
+turing.1008	系统屏幕亮度，按 0 到 1 的小数记录。
+turing.1009	en* 接口的 IPv4/IPv6 地址，返回数组索引 1
+turing.1010	pdp_ip* 接口的 IPv4/IPv6 地址，返回数组索引 0
+turing.1011	utun* 接口的 IPv4/IPv6 地址，返回数组索引 2
+turing.1012	空字符串占位
+turing.1013	SCNetworkReachabilityCreateWithName("8.8.8.8") 和 flags 映射，查询失败/不可达/普通路径/WWAN 为 0/1/2/3
+turing.1014	网络相关占位，来源固定空字符串
+turing.1015	网络相关占位，特征对两项均为空字符串
+turing.1016	系统代理模式。0 未启用，1 HTTP，2 PAC。HTTP 优先。
+turing.1017	HTTP 主机与端口，或 PAC URL
+turing.1019	按样本路径匹配生成的越狱迹象位图。模拟器不执行真机路径检查。
+turing.1020	设备机型
+turing.1021	系统版本
+turing.1022	设备名称（系统接口返回）
+turing.1023	运营商名称
+turing.1024	区域的国家代码
+turing.1025	运营商 MCC
+turing.1026	运营商 MNC
+turing.1027	宿主应用 Bundle ID
+turing.1028	首选语言数组
+turing.1042	空数组占位
+turing.1051	当前进程的 P_TRACED 状态。1 表示置位，0 表示未置位。
+turing.1054	Mach-O CryptID
+turing.1055	UIDevice 电池状态的原始整数。0 未知，1 未充电，2 正在充电，3 已充满。
+turing.1056	硬件 sysctl 属性数组；含 CPU 数、页大小和内存类参数
+turing.1057	内核 sysctl 属性数组；包含一项 SHA-256 处理结果
+turing.1060	/System 文件系统或挂载相关元数据组；底层为间接调用
+turing.1061	屏幕捕获状态，格式为含一个字符串的数组。1 正在捕获，0 未捕获。
+turing.1063	作用域代理配置（__SCOPED__ JSON）
+tongdun.0	SDK 版本。样本类型 2。优先非空全局版本字符串，默认 5.2.5.2。
+tongdun.1	平台。样本类型 2。固定 UTF-8 字符串 iOS。
+tongdun.5	广告标识 IDFA。样本类型 2。配置 noIDFA / IDFA 控制；ASIdentifierManager.sharedManager.advertisingIdentifier.UUIDString。
+tongdun.6	供应商标识 IDFV。样本类型 2。配置 IDFV 控制；UIDevice.currentDevice.identifierForVendor.UUIDString。
+tongdun.7	采集时间。样本类型 4。NSDate.timeIntervalSince1970 × 1,000,000 后转 int64，微秒。
+tongdun.8	启动时间。样本类型 4。sysctl MIB [CTL_KERN=1,KERN_BOOTTIME=21]；tv_sec × 1,000,000 + tv_usec。
+tongdun.9	文件系统总容量。样本类型 4。Documents 所在文件系统 attributesOfFileSystemForPath:error: → NSFileSystemSize.longLongValue。
+tongdun.10	文件系统空闲容量。样本类型 4。同字段 9 的 Foundation 路径；NSFileSystemFreeSize.longLongValue。
+tongdun.11	物理内存。样本类型 4。NSProcessInfo.processInfo.physicalMemory。
+tongdun.12	蜂窝 IPv4。样本类型 2。getifaddrs → pdp_ip0 的 AF_INET 地址；共享 272 字节网络结构 +0；配置 cellIp 控制。
+tongdun.13	Wi-Fi IPv4。样本类型 2。getifaddrs → en0 的 AF_INET 地址；共享网络结构 +36；配置 wifiIp 控制。
+tongdun.14	Wi-Fi IPv4 掩码。样本类型 2。getifaddrs → en0.ifa_netmask → inet_ntop(AF_INET)；共享网络结构 +54。
+tongdun.15	VPN IPv4。样本类型 2。接口名含 tap/tun/ppp/ipsec 的 AF_INET 地址；共享网络结构 +72；配置 vpnIp 控制。
+tongdun.16	VPN IPv4 掩码。样本类型 2。对应 VPN 接口的 ifa_netmask，经 inet_ntop(AF_INET)；共享网络结构 +90。
+tongdun.18	接口 IP 汇总。样本类型 2。getifaddrs 的地址去重集合 allObjects，以逗号拼接；集合顺序不保证稳定。
+tongdun.23	首选语言。样本类型 2。NSLocale.preferredLanguages，按采集代码取前部语言并以冒号拼接。
+tongdun.24	硬件机型。样本类型 2。sysctlbyname("hw.machine")。
+tongdun.25	系统版本。样本类型 2。UIDevice.currentDevice.systemVersion。
+tongdun.27	运营商名称。样本类型 2。CTTelephonyNetworkInfo.serviceSubscriberCellularProviders / subscriberCellularProvider → carrierName；多卡用逗号拼接。
+tongdun.28	移动网络码 MNC。样本类型 2。与字段 27 共用运营商采集；CTCarrier.mobileNetworkCode。
+tongdun.29	移动国家码 MCC。样本类型 2。与字段 27 共用运营商采集；CTCarrier.mobileCountryCode。
+tongdun.30	蜂窝接入制式。样本类型 2。CTTelephonyNetworkInfo 的 serviceCurrentRadioAccessTechnology / currentRadioAccessTechnology。
+tongdun.31	地区代码。样本类型 2。NSLocale.currentLocale → NSLocaleCountryCode。
+tongdun.32	应用包名和版本。样本类型 2。NSBundle.bundleIdentifier + "_" + infoDictionary[CFBundleShortVersionString]。
+tongdun.34	空字符串占位。样本类型 2。该写入路径的源值是空 C 字符串。
+tongdun.35	当前 Wi-Fi 网络名 SSID，来自 CNCopyCurrentNetworkInfo("en0")。需满足系统授权和签名能力条件。
+tongdun.36	当前 Wi-Fi 接入点的 BSSID，来自同一 CNCopyCurrentNetworkInfo 字典。该地址属于接入点。
+tongdun.37	DNS 服务器。样本类型 2。res_9_ninit、解析 resolver sockaddr、inet_ntop；拼接地址列表。
+tongdun.38	屏幕亮度。样本类型 2。UIScreen.mainScreen.brightness 转百分比字符串。
+tongdun.39	电池信息。样本类型 2。UIDevice.batteryLevel、batteryState 组合。
+tongdun.44	定位授权状态。样本类型 3。CLLocationManager.locationServicesEnabled 与 authorizationStatus 的组合整数。
+tongdun.45	内核版本串。样本类型 2。uname 输出结构的 +768，即 utsname.version；不是 hw.machine。
+tongdun.46	时区。样本类型 2。NSTimeZone.localTimeZone.name。
+tongdun.47	资源签名文件摘要。样本类型 2。mainBundle.bundlePath + /_CodeSignature/CodeResources 的 SHA-256 十六进制摘要。
+tongdun.48	调试状态位图。样本类型 3。bit0：sysctl 失败或 P_TRACED；bit1：getppid()!=1；bit2：isatty(1)!=0。输出 int32。
+tongdun.55	镜像装载偏移候选值。样本类型 2。遍历 _dyld_get_image_vmaddr_slide，用相等加一、不等减一、计数归零重选的抵消算法选候选 slide，输出 %lld。不是所有 slide 的拼接。
+tongdun.58	内核构建号。样本类型 2。sysctlbyname("kern.osversion")。
+tongdun.59	蜂窝已发送字节。样本类型 4。路由 sysctl NET_RT_IFLIST2 → if_msghdr2；筛选 pdp_ip0，累计结构 +104 的 ifm_data.ifi_obytes。
+tongdun.60	屏幕尺寸。样本类型 2。UIScreen.mainScreen.bounds 的宽、高格式化。
+tongdun.63	内存统计对照。样本类型 2。host_statistics64(HOST_VM_INFO64) 的 free+active+inactive+wire+speculative+compressor 页数之和 × host_page_size；与 sysctl 硬件内存值组成 %lld|%ld。
+tongdun.64	statfs 容量对照。样本类型 2。动态 dlsym("statfs")，根路径的 f_bsize*f_blocks 和 f_bsize*f_bavail，格式 %.0llu|%.0llu。
+tongdun.67	单调运行时间。样本类型 2。CACurrentMediaTime()，格式 %f。
+tongdun.70	Wi-Fi IPv6。样本类型 2。getifaddrs → en0 的 AF_INET6 地址；共享网络结构 +154，配置 wifiIpv6 控制。
+tongdun.76	awdl0 接口 IPv6。样本类型 2。getifaddrs → 接口名 awdl0 的 AF_INET6 地址；共享网络结构 +108。
+tongdun.80	已知工具应用位图。样本类型 2。固定 38 名称构造 /Applications/%@.app，以 fileExistsAtPath/fopen/opendir 检测；输出 %llx。
+tongdun.84	沙盒根目录。样本类型 2。NSHomeDirectory()。
+tongdun.85	描述文件团队名称。样本类型 2。解析 embedded.mobileprovision，取 TeamName。
+tongdun.86	描述文件应用标识。样本类型 2。同字段 85 的 Entitlements[application-identifier]。
+tongdun.87	主程序加密标志。样本类型 2。定位主可执行镜像的 LC_ENCRYPTION_INFO_64(44)，取命令 +16 的 cryptid；另有 0、-1、空字符串失败分支。
+tongdun.100	采集器固定标记。样本类型 3。该写入点直接写 int32 常量 1。
+tongdun.101	已加载镜像数量。样本类型 3。与字段 55 共用结果结构 +12，保存 _dyld_image_count()。
+tongdun.111	配置描述文件元数据时间。样本类型 2。/private/var/mobile/Library/UserConfigurationProfiles/PublicInfo/MCMeta.plist 的 NSFileCreationDate，epoch 秒，%f。
+tongdun.136	只实现样本 62 条固定路径的位图，保留 bit 35。SDK 附加位仍待复现。
+tongdun.137	屏幕完整几何。样本类型 2。bounds 宽高、scale、nativeScale、nativeBounds 宽高，%g|%g|%g|%g|%g|%g。
+tongdun.138	启动会话 UUID。样本类型 2。sysctlbyname("kern.bootsessionuuid")。
+tongdun.139	录屏状态。样本类型 3。UIScreen.screens → isCaptured；-1 表示缺少相应能力，另有 0/1 结果。
+tongdun.140	运营商 ISO 地区。样本类型 2。与字段 27 共用运营商采集；CTCarrier.isoCountryCode。
+tongdun.200	本 App 开始采集到生成本字段的耗时，单位为微秒。原 SDK 的计时区间不同。
+tongdun.201	本次采集编号。样本类型 2。NSString 格式 %.0lf%d：epoch 秒 ×1000 的毫秒格式化结果，紧接 arc4random()%899999 +100000。
+tongdun.205	模拟器迹象。样本类型 2。遍历 dyld：bit0 为镜像路径后缀 usr/lib/dyld_sim，bit1 为路径包含 Library/Developer/CoreSimulator；十进制字符串 %llu。
+tongdun.206	Mac 运行迹象。样本类型 2。遍历 dyld：bit0 为路径包含 System/iOSSupport，bit1 为后缀 Wrapper/<executable>.app/<executable>；十进制字符串 %llu。
+tongdun.207	系统版本文件信息。样本类型 2。读取 /System/Library/CoreServices/SystemVersion.plist；ProductName、BuildID、ProductVersion、ProductBuildVersion、ReleaseType、ProductCopyright，保留格式中的双竖线。
+tongdun.208	程序实际签名应用标识。样本类型 2。读取主可执行 Mach-O 代码签名，解析 Entitlements，取 application-identifier。区别于字段 86 的 mobileprovision 来源。
+tongdun.215	扩展采集 JSON。当前子集含进程、调用栈、屏幕捕获、应用名、区域、文件时间和接口等字段。
+tongdun.216	Documents 创建时间。样本类型 2。NSFileManager URLsForDirectory:9 inDomains:1 → path → NSFileCreationDate → epoch 秒，%lf。
+tongdun.220	音频输入状态。样本类型 3。AVAudioSession.availableInputs/currentRoute.inputs/selectedDataSource 的分支；-1 无可用输入、1 存在 nil selectedDataSource、0 其余。
+tongdun.222	系统代理作用域 VPN 接口。样本类型 2。CFNetworkCopySystemProxySettings()[__SCOPED__] 的接口键，筛选 tun/ipsec/tap/ppp。
+tongdun.229	Hook 框架符号。样本类型 2。DobbyHook、DobbySymbolResolver、MSHookMessageEx 等符号查找，按 Dobby/CydiaSubstrate 名称归组输出。
+tongdun.230	根卷 UUID。样本类型 2。NSURL("/") 读取 NSURLVolumeUUIDStringKey。
+tongdun.235	收据 URL。样本类型 2。NSBundle.mainBundle.appStoreReceiptURL.resourceSpecifier。
